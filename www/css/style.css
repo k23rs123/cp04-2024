@@ -112,6 +112,12 @@
         background-color: rgb(183, 0, 255);
         color: rgb(255, 142, 199); 
     }
+    #btnD {
+        font-size: 20px;
+        position:absolute; top:500px; left:35%; width:33%; height:60px;
+        background-color: rgb(255, 0, 0);
+        color: rgb(142, 150, 255); 
+    }
     
     #minute {
         font-size: 30px;

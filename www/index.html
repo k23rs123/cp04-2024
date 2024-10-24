@@ -38,6 +38,9 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+        $('#btnD').click(function(e) {
+            btnDClick(e);
+        });
         init();
     });
     
@@ -163,6 +166,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        $('#btnD').prop('disabled', false);
         
     }
 
@@ -171,10 +175,10 @@
         var canvas = $("#mycanvas")[0];
         var ctx = canvas.getContext("2d");
         var img = new Image();
-        img.src = "ksuisbg.gif";
+        img.src = "OIP.jfif";
         img.onload = function() {
-            ctx.drawImage(img, 0, 0, 300, 300);
-        };
+            ctx.drawImage(img, 0, 0, 200, 200);
+        }
         var audio = new Audio();
         audio.src = "pin.wav";
         audio.play();
@@ -205,6 +209,16 @@
         $("#remain").html("残り時間： " + period);
         
     }
+
+    // ButtonDがクリックされた時の処理
+    function btnDClick(e){
+        active = false;
+        period = 1800; 
+        $("#time").html("経過時間： 0");
+        $("#remain").html("残り時間： " + period);
+
+        
+    }
     
  
     // 繰り返し実行する処理
@@ -215,14 +229,14 @@
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + rest);
             analog(rest);
+            
         }
         if(rest<=0){
             active=false;
             alarm();
         }
-        
-        
-    } 
+    }
+    
 
   </script>
 </head>
@@ -242,7 +256,8 @@
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button>  
+    <button id="btnD">昼寝</button>
     <input type="number" id="minute" value=0>
-    <input type="number" id="second"value=15>
+    <input type="number" id="second" value=15>
 </body>
 </html>
